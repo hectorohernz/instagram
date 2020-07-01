@@ -10,7 +10,7 @@ const Profile = require("../../models/Profile"); // Bring in mongodb model ( Sch
 
 // Multer Image Upload Requirements for clear and persie code
 const storage = multer.diskStorage({
-  destination: "../public/uploads",
+  destination: "../client/public/uploads",
   filename: function (req, file, cb) {
     cb(null, "IMAGE-" + Date.now() + path.extname(file.originalname));
   },
