@@ -1,0 +1,33 @@
+.test{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.test form{
+    display: flex;
+    flex-direction: column;
+}
+.test form input{
+   height: 30px;
+   width: 300px;
+   margin: 5px;
+   outline: none;
+   border: 1px solid black;
+   padding-left: 10px;
+}
+.test form input[type = "submit"]{
+    background: black;
+    color: white;
+    border-radius: 25px;
+}
+
+.alert-danger{
+    z-index: 10;
+    
+    height: 50px;
+    width: 80%;
+    background: red;
+    color: white;
+
+}

@@ -1,0 +1,65 @@
+.bg-gradient{
+    background: url('/images/instgram-background.png');
+    position: relative;
+    font-family: arial;
+}
+.main-logo {
+    text-align: center;
+}
+
+.fa-chevron-left {
+    position: absolute;
+    left: 10px;
+    top: 25px;
+    font-size: 20px;
+    color: #000;
+  }
+
+.login-container {
+    width: 400px;
+    border: solid white;
+    border-radius: 20px;
+    margin: 4% auto;
+    text-align: center;
+    position: relative;
+    background-color: white;
+}
+
+.fields {
+    margin: 60px 0;
+    padding-bottom: 40px;
+  }
+
+.input-fields {
+    display: block;
+    margin: 15px auto;
+    border-radius: 10px;
+    border: solid grey 1px;
+    width: 250px;
+    height: 30px;
+    font-family: arial;
+  }
+  
+.input-fields:focus {
+    outline: none;
+  }
+
+  .login-button {
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 20px;
+    padding: 4px;
+    height: 30px;
+    width: 175px;
+    font-family: arial;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-top: 25px;
+    cursor: pointer;  
+
+  }
+  
+  .login-button:focus {
+    outline: none;
+  }

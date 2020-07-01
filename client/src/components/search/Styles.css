@@ -1,0 +1,38 @@
+.contenedor{
+    width: 500px;
+    height: 400px;
+    border: solid white;
+    border-radius: 20px;
+    margin: 4% auto;
+    text-align: center;
+    position: relative;
+    background-color: white;
+}
+
+.forminput{
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.btn{
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 20px;
+    padding: 4px;
+    height: 30px;
+    width: 175px;
+    font-family: arial;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-top: 25px;
+    cursor: pointer;  
+}
+
+.forminput_message{
+    width: 80%;
+    margin: 0 auto;
+    height: 170px;
+    border-radius: 10px;
+}
