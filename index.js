@@ -16,15 +16,13 @@ app.use('/api/profile', require('./routes/api/profiles'));  // Defining profiles
 app.use('/api/posts', require('./routes/api/post')); // Defining Post route
 
 // Server static assets in production
-if(process.env.NODE_ENV === 'production'){
-    // Set Static Folder 
-    app.use(express.static('../client/build'));
+
+    app.use(express.static('client/build'));
 
     app.get('*', (req,res) => {
-       res.sendFile(path.join(__dirname, 'client' , 'build', 'index.html')); 
-    })
-} 
-
+        const index = path.resolve(__dirname, 'client','build', 'index.html');
+        res.sendFile(index);
+    });
 // Int Server 
 app.listen( PORT, () => {
     console.log(`PORT Is Listening on localhost:${PORT}`)
