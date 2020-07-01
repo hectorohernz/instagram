@@ -19,7 +19,7 @@ app.use("/api/posts", require("./routes/api/post")); // Defining Post route
 if (process.env.NODE_ENV === "production") {
   console.log(" Server Is In production")
   app.use(express.static("client/build"));
-  app.get("*", (req, res) => {
+  app.get("/*", (req, res) => {
     const index = path.resolve(__dirname, "client", "build", "index.html");
     res.sendFile(index);
   });
