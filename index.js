@@ -7,7 +7,7 @@ const path = require("path");
 connectDB();
 // using json data
 app.use(express.json({ extented: false, limit: "50mb" }));
-
+// Hello
 // Defining Routes
 app.use("/api/users", require("./routes/api/users")); // Defining User route
 app.use("/api/auth", require("./routes/api/auth")); // Defining Auth route
