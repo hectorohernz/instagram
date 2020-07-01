@@ -8,7 +8,7 @@
 /coverage
 
 # production
-/build
+
 /server/config/default.json
 # misc
 .DS_Store
