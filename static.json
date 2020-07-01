@@ -2,11 +2,6 @@
     "root": "client/build",
     "routes": {
       "/**": "index.html"
-    },
-    "proxies": {
-      "/api/": {
-        "origin": "https://glacial-refuge-25064.herokuapp.com/"
-      }
     }
-  }
+}
   
