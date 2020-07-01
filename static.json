@@ -5,7 +5,7 @@
     },
     "proxies": {
       "/api/": {
-        "origin": "http://localhost:5000"
+        "origin": "https://glacial-refuge-25064.herokuapp.com/"
       }
     }
   }
