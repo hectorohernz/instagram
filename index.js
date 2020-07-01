@@ -8,9 +8,10 @@ const proxy = require("http-proxy-middleware");
 // Connect Database
 connectDB();
 
-
-app.use(proxy(["/api", , "/otherApi"], { target: `http://localhost:5000`  }));
-
+module.exports = function(app) {
+  app.use(proxy('/api/**', { target: 'http://localhost:5000' }));
+  app.use(proxy('/otherApi/**', { target: 'http://localhost:5000' }));
+};
 
 // using json data
 app.use(express.json({ extented: false, limit: "50mb" }));
