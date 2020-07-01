@@ -8,7 +8,7 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "install": "cd client && npm install ",
+    "install": "cd client && npm install",
     "build": "cd client && npm run build"
   },
   "repository": {
@@ -35,5 +35,8 @@
     "multer": "^1.4.2",
     "validator": "^13.1.1"
   },
-  "homepage": "https://github.com/hectorohernz/instagram#readme"
+  "homepage": "https://github.com/hectorohernz/instagram#readme",
+  "engines": {
+    "node": "12.16.1"
+  }
 }
