@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/hectorohernz/instagram/issues"
   },
-  "homepage": "https://github.com/hectorohernz/instagram#readme"
+  "homepage": "https://github.com/hectorohernz/instagram#readme",
+  "engines":{
+    "node" :"12.16.1"
+  }
 }
