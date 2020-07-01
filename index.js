@@ -3,7 +3,6 @@ const app = express();
 const PORT = process.env.PORT || 5000; // Server location is localhost:5000 or If process.env.PORT
 const connectDB = require("./config/db"); // Requiring Connection to mongodb and mongoose connection
 const path = require("path");
-const rootAPI = require('./routes/api/rootApi');
 
 // Connect Database
 connectDB();
@@ -18,7 +17,7 @@ app.use("/api/users", require("./routes/api/users")); // Defining User route
 app.use("/api/auth", require("./routes/api/auth")); // Defining Auth route
 app.use("/api/profile", require("./routes/api/profiles")); // Defining profiles route
 app.use("/api/posts", require("./routes/api/post")); // Defining Post route
-app.use('/', rootAPI)
+
 // Server static assets in production
 
 if (process.env.NODE_ENV === "production") {
