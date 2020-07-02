@@ -4,13 +4,16 @@ const PORT = process.env.PORT || 5000; // Server location is localhost:5000 or I
 const connectDB = require("./config/db"); // Requiring Connection to mongodb and mongoose connection
 const path = require("path");
 const cors = require("cors");
-
+const router = require('express').Router();
 // Connect Database
 connectDB();
 // using json data
 app.use(express.json({ extented: false, limit: "50mb" }));
 app.use(cors());
 
+router.use(function(req, res) {
+	res.sendFile(path.join(__dirname, '../client/build/index.html'));
+});
 
 // Hello
 // Defining Routes
