@@ -1,6 +1,5 @@
 const express = require("express"); // Express to a quickier way of  creating a server with mongodb
 const app = express();
-const PORT = process.env.PORT || 5000; // Server location is localhost:5000 or If process.env.PORT
 const connectDB = require("./config/db"); // Requiring Connection to mongodb and mongoose connection
 const path = require("path");
 const cors = require("cors");
@@ -22,6 +21,7 @@ app.use("/api/posts", require("./routes/api/post")); // Defining Post route
 if (process.env.NODE_ENV === "production") {
   console.log(" Server Is In production")
   app.use(express.static("client/build"));
+
   app.get("*", (req, res) => {
     const index = path.resolve(__dirname, "client", "build", "index.html");
     res.sendFile(index);
@@ -36,6 +36,7 @@ if (process.env.NODE_ENV === "production") {
     });
 }
 
+const PORT = process.env.PORT || 5000; // Server location is localhost:5000 or If process.env.PORT
 
 // Int Server
 app.listen(PORT, () => {
