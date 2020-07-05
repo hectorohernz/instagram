@@ -4,7 +4,7 @@ let uri = null;
 
 mongoose.set('useFindAndModify', false);
 if(process.env.NODE_ENV === "production"){
-   uri = process.env.DB_HOST;
+   uri = "mongodb+srv://username:Ilovepugs@instagram-db-maqfn.mongodb.net/instagram-db?retryWrites=true&w=majority";
 } else{
     uri = "mongodb+srv://username:Ilovepugs@instagram-db-maqfn.mongodb.net/instagram-db?retryWrites=true&w=majority";
 }

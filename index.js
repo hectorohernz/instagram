@@ -19,6 +19,7 @@ app.use("/api/posts", require("./routes/api/post")); // Defining Post route
 // Server static assets in production
 
 if (process.env.NODE_ENV === "production") {
+
   console.log(" Server Is In production")
   app.use(express.static("client/build"));
 
@@ -28,6 +29,7 @@ if (process.env.NODE_ENV === "production") {
   });
 
 } else{
+  
   console.log(" Server Is In Dev")
     app.use(express.static("client/build"));
     app.get("*", (req, res) => {
