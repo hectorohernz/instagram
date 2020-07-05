@@ -7,7 +7,7 @@ const cors = require("cors");
 connectDB();
 // using json data
 app.use(express.json({ extented: false, limit: "50mb" }));
-app.use(cors());
+
 
 // Hello
 // Defining Routes
