@@ -35,18 +35,18 @@ class Login extends Component {
         }
 
         return (
-            <div className='bg-gradient'>
+            <div className='login'>
             <div className="main__logo">
                 <img src="/images/logo.png" alt="" />
             </div>
-            <div className="login-container">
+            <div className="whitebox-expanded">
                 <h2>Login</h2>
                 <a href="/"><i class="fas fa-chevron-left"></i></a>
                 <Alert/>
-                <form className="fields"  onSubmit={this.submitHandler}>
+                <form  className="whitebox" onSubmit={this.submitHandler}>
                     <input type="text" value={username}   name="username" placeholder=" Username" className="input-fields" onChange={this.changeHandler}/>
                     <input type="password" value={password} name="password" placeholder=" Password" className="input-fields" onChange={this.changeHandler}/>
-                    <input type="submit"  class="login-button" />
+                    <input type="submit"  />
                 </form>
             </div>
             

@@ -1,60 +1,146 @@
-.bg-gradient{
-    background: url('/images/instgram-background.png');
-    position: relative;
-    font-family: arial;
-}
-.main-logo {
-    text-align: center;
-}
-.fa-chevron-left {
-    position: absolute;
-    left: 10px;
-    top: 25px;
-    font-size: 20px;
-  }
-.signup-container {
-    width: 400px;
-    border: solid white;
-    border-radius: 20px;
-    margin: 4% auto;
-    text-align: center;
-    position: relative;
-    background-color: white;
-}
-.fields {
-    margin: 60px 0;
-    padding-bottom: 40px;
-  }
-  
-.input-fields {
-    display: block;
-    margin: 15px auto;
-    border-radius: 10px;
-    border: solid grey 1px;
-    width: 250px;
-    height: 30px;
-    font-family: arial;
-  }
-  
-.input-fields:focus {
-    outline: none;
-  }
 
-.signup-button {
-  color: white;
-  background-color: black;
-  border: none;
-  border-radius: 20px;
-  padding: 4px;
-  height: 30px;
-  width: 175px;
-  font-family: arial;
-  letter-spacing: 2px;
-  font-weight: bold;
-  margin-top: 25px;
-  cursor: pointer;  
+.sign-up {
+  height: 100vh;
+  background: url('/images/instgram-background.png');
+  filter: hue-rotate(30.142rad);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: repeat(10,1fr);
+  grid-template-rows: repeat(10,1fr);
 }
+
+
+.main__logo{
+  grid-row: 2/ span 2;
+  grid-column: 2/ span 8;
+  text-align: center;
+}
+
+.main__logo img{
+  height: 100px;
+  width: 250px;
+}
+
+.whitebox-login{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  grid-row: 5/ span 10;
+  grid-column: 1/ span 10;
+  border-top-left-radius:50px;
+  border-top-right-radius:50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.whitebox-btn{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-top-left-radius:50px;
+  border-top-right-radius:50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-row: 8/ span 3;
+  grid-column: 1/ span 10;
+}
+
+.whitebox-expanded [type="submit"]{
+  height: 35px;
+  width: 200px;
+  margin: 15px 0px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 25px;
+  text-transform: uppercase;
+  border: 3px solid black;
+  outline: none;
+  cursor: pointer;
+ text-decoration: none;
+}
+.whitebox-expanded i{
+  font-size: 50px;
+}
+.whitebox-expanded [type="text"]{
+  height:35px;
+  width: 300px;
+  margin: 15px 0px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 25px;
   
-.signup-button:focus {
-    outline: none;
+  border: 3px solid black;
+  outline: none;
+  cursor: pointer;
+ text-decoration: none;
+}
+.whitebox-expanded [type="password"]{
+  height:35px;
+  width: 300px;
+  margin: 15px 0px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 25px;
+  border: 3px solid black;
+  outline: none;
+  cursor: pointer;
+ text-decoration: none;
+}
+.whitebox__signup{
+  background: black;
+  color: white;
+}
+
+.whitebox-expanded{
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  grid-row: 4/ span 7;
+  grid-column: 1/ span 10;
+  border-top-left-radius:50px;
+  border-top-right-radius:50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media only screen and (min-width: 800px){
+  .main__logo{
+      grid-row: 2/ span 2;
+      grid-column: 2/ span 8;
+      text-align: center;
   }
+  
+  .main__logo img{
+      height: 150px;
+      width: 400px;
+  }
+  .whitebox-expanded button{
+      opacity: 0.6;
+      transition: 0.3s;
+  }
+  .whitebox-expanded{
+      grid-row: 4/ span 4;
+      grid-column: 3/ span 6;
+      border-radius:20px ;
+  }
+  .whitebox-expanded{
+      grid-row: 4/ span 4;
+      grid-column: 3/ span 6;
+      border-radius:20px ;
+  }
+  .whitebox-expanded i{
+    font-size: 100px;
+    margin: 15px;
+  }
+  
+}
+

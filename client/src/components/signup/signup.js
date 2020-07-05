@@ -43,15 +43,15 @@ class SignUp extends React.Component{
         };
 
         return (
-            <div className="bg-gradient">
+            <div className="sign-up">
             <div className="main__logo">
                 <img src="/images/logo.png" alt="" />
             </div>
-            <div className="signup-container">
+            <div className="whitebox-expanded">
                 <h2>Sign Up</h2>
                 <a href="/"><i class="fas fa-chevron-left"></i></a>
                 <Alert/>
-                <form className="fields" onSubmit={this.submitHandler}>
+                <form  className="whitebox" onSubmit={this.submitHandler}>
                     <input type="text"   id='name' name="name"   value={name} placeholder=" Name" className="input-fields" onChange={this.changeHandler}/>
                     <input type="tel"  id="phone"  name="phone" value={phone}  placeholder=" Phone Number" className="input-fields" onChange={this.changeHandler}/>
                     <input type="email" id='email' name="email" value={email} placeholder=" Email" className="input-fields" onChange={this.changeHandler}/>
