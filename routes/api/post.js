@@ -8,9 +8,10 @@ const User = require("../../models/User"); // Bring in mongodb model ( Schema )
 const Post = require("../../models/Post"); // Bring in mongodb model ( Schema )
 const Profile = require("../../models/Profile"); // Bring in mongodb model ( Schema )
 
+
 // Multer Image Upload Requirements for clear and persie code
 const storage = multer.diskStorage({
-  destination: "../client/public/uploads",
+  destination: "../../client/public/uploads",
   filename: function (req, file, cb) {
     cb(null, "IMAGE-" + Date.now() + path.extname(file.originalname));
   },
@@ -35,7 +36,6 @@ const upload = multer({
 // @access  Private
 
 router.post("/", [upload.single("image"), auth], async (req, res) => {
-  console.log(req.file);
   try {
     const user = await User.findById(req.user.id).select("-password");
     if (!req.file) {

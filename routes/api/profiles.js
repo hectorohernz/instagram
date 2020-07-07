@@ -3,28 +3,7 @@ const router = express.Router();
 const auth = require("../../middleware/auth");
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
-const multer = require("multer");
-const path = require("path");
 
-const storage = multer.diskStorage({
-  destination: "../public/uploads",
-  filename: function (req, file, cb) {
-    cb(null, "IMAGE-" + Date.now() + path.extname(file.originalname));
-  },
-});
-const filterFilter = (req, file, cb) => {
-  if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
-    cb(null, true);
-  } else {
-    cb(null, false);
-  }
-};
-
-const upload = multer({
-  storage: storage,
-  limits: { fileSize: 1000000 },
-  fileFilter: filterFilter,
-});
 
 // @route   GET api/profile/me
 // @Desc    get current users profile
@@ -51,7 +30,7 @@ router.get("/me", auth, async (req, res) => {
 // @Desc    Create / Update a users profile
 // @access  Private
 
-router.post("/", [upload.single("recFile"), auth], async (req, res) => {
+router.post("/",  auth, async (req, res) => {
   const {
     bio,
     location,
@@ -60,14 +39,15 @@ router.post("/", [upload.single("recFile"), auth], async (req, res) => {
     hobbies,
     food,
     movie,
-    profileImage,
+    profileImage
   } = req.body;
-  const url = req.protocol + "://" + req.get("host");
+  console.log(req.body);
+
   // Build profiles object
   const profileFields = {}; // Object before hits the database
 
   profileFields.user = req.user.id;
-  if (req.file) profileFields.profileImage = "uploads/" + req.file.filename;
+  if (profileImage) profileFields.profileImage = profileImage;
   if (bio) profileFields.bio = bio;
   if (location) profileFields.location = location;
   if (marital) profileFields.marital = marital;

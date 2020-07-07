@@ -1,36 +1,59 @@
 import React, { useState } from "react";
-import {link, withRouter} from 'react-router-dom';
+import { link, withRouter, Redirect } from 'react-router-dom';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import "./create.css";
-import {createProfile} from '../../actions/Profile';
-
-const CreateProfile = ({ createProfile, history }) => {
+import { images } from '../../mock/PFile.json';
+import axios from 'axios';
+import { createProfile } from '../../actions/Profile'
+import { setAlert } from '../../actions/alert';
+const CreateProfile = () => {
   const [formData, setFormData] = useState({
     bio: "",
-    recFile: null,
     location: "",
     hobbies: "",
     music: "",
     food: "",
     martial: "",
+    profileImage: 0
   });
-  const { bio, recFile, location, hobbies, music, food, martial } = formData;
+  const [formCompleted, updateFormCompleted] = useState(false);
 
+  const { bio, profileImage, location, hobbies, music, food, martial } = formData;
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value })
-
-
-  const onSubmit = e => {
-      e.preventDefault();
-      createProfile(formData, history);
+  const onSubmit = async e => {
+    e.preventDefault();
+    const config = {
+      headers: {
+        'Content-Type': "application/json"
+      }
     };
+   try{
+      await axios.post("/api/profile", formData, config);
+      updateFormCompleted(true);
+   } catch(err){
+    console.log(err);
+   };
+  };
+  if(formCompleted){
+    return <Redirect to="/successful"/>
+}
 
   return (
     <section className="create-profile">
       <h1> Create Your Profile</h1>
       <form onSubmit={(e => onSubmit(e))}>
-      <label htmlFor="recFile">Profile Photo</label>
-      <input type="file" id='recFile' value={recFile} name="recFile"  onChange={(e) => onChange(e)} />
+        <div className="image">
+          <img src={images[profileImage].path} className="profile-image" />
+        </div>
+        <select id="profileImage" name="profileImage" value={profileImage} onChange={(e) => onChange(e)}>
+          <option value="0">Choose Profile Image</option>
+          <option value="1">Robot Cop</option>
+          <option value="2">Woman Avatar</option>
+          <option value="3">Men Avatar</option>
+          <option value="4">Woman Avatar</option>
+          <option value="5">Woman Avatar</option>
+        </select>
         <input
           type="text"
           value={bio}
@@ -52,13 +75,13 @@ const CreateProfile = ({ createProfile, history }) => {
           placeholder="Enter Favorite Food"
           onChange={(e) => onChange(e)}
         />
-        <select id="martial"  name="martial" value={martial}  onChange={(e) => onChange(e)}>
+        <select id="martial" name="martial" value={martial} onChange={(e) => onChange(e)}>
           <option value="N/A">Enter Martial Status</option>
           <option value="single">Single</option>
           <option value="Dating">Dating</option>
           <option value="Married">Married</option>
         </select>
-        <select id="music"  name="music"   value={music} onChange={(e) => onChange(e)}>
+        <select id="music" name="music" value={music} onChange={(e) => onChange(e)}>
           <option value="N/A">Enter Favorite Music Genre</option>
           <option value="Hip Hop">Hip Hop</option>
           <option value="Pop">Pop</option>
@@ -72,7 +95,10 @@ const CreateProfile = ({ createProfile, history }) => {
           placeholder="Enter location"
           onChange={(e) => onChange(e)}
         />
-        <input type="submit" value="Submit"  />
+        <div>
+          <input type="submit" value="Submit" />
+          <input type="submit" value="Maybe Later"/>
+        </div>
       </form>
     </section>
   );
@@ -83,4 +109,4 @@ CreateProfile.propTypes = {
 };
 
 
-export default connect(null, {createProfile})(withRouter(CreateProfile));
+export default connect(null, { createProfile })(withRouter(CreateProfile));

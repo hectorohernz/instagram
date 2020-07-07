@@ -10,7 +10,6 @@
     justify-content: center;
     align-items: center;
     background-color: rgb(170, 168, 168);
-    opacity: 0.8;
     width: 300px;
     height: 100%;
     position: fixed;
@@ -21,10 +20,12 @@
     border-radius: 10% 0% 0% 10%;
   }
   
-  img {
+  .nav-img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    height: 150px;
+    border-radius: 100px;
   }
 
   h1 {
@@ -66,7 +67,7 @@
     background-color: auto;
     width: 40px;
     height: 40px;
-    top: 40px;
+    top: 70px;
     right: 50px;
     padding: 15px;
     border-radius: 100%;

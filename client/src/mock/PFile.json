@@ -1,0 +1,10 @@
+{
+    "images":[
+        {"id":0, "path": "/staticProfileImg/generic-profile-picture.jpg"},
+        {"id":1, "path": "/staticProfileImg/computer-icons-user-profile-avatar-avatar.jpg"},
+        {"id":2, "path": "/staticProfileImg/female-avatar-profile-icon-round-woman-face-vector-18307274.jpg"},
+        {"id":3, "path": "/staticProfileImg/avatar-pic-1.png"},
+        {"id":4, "path": "/staticProfileImg/portrait-african-american-woman-profile-avatar-young-black-girl_102172-418.jpg"},
+        {"id":5, "path": "/staticProfileImg/portrait-strong-muslim-woman-profile-wearing-black-hijab-confident-young-arab-girl_102172-433.jpg"}
+    ]
+}

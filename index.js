@@ -13,11 +13,10 @@ app.use(express.json({ extented: false, limit: "50mb" }));
 // Defining Routes
 app.use("/api/users", require("./routes/api/users")); // Defining User route
 app.use("/api/auth", require("./routes/api/auth")); // Defining Auth route
-app.use("/api/profile", require("./routes/api/profiles")); // Defining profiles route
+app.use("/api/profile", require('./routes/api/profiles')); // Defining profiles route
 app.use("/api/posts", require("./routes/api/post")); // Defining Post route
 
 // Server static assets in production
-
 if (process.env.NODE_ENV === "production") {
   console.log(" Server Is In production")
   app.use(express.static(path.join(__dirname, 'client/build')));

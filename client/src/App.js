@@ -23,7 +23,7 @@ import Login from './components/login/login';
 import SignUp from './components/signup/signup';
 import setAuthToken from './utils/setAuthToken';
 import CreateProfile from './components/createProfile/createProfile'
-
+import Successful from './components/alerts/SuccesReg';
 // This site has 3 pages, all of which are rendered
 // dynamically in the browser (not server rendered).
 // Although the page does not ever refresh, notice how
@@ -76,6 +76,9 @@ export default class BasicExample extends Component {
                 </Route>
                 <Route path="/create">
                   <CreateProfile />
+                </Route>
+                <Route path="/successful">
+                  <Successful />
                 </Route>
               </Switch>
           </Router>

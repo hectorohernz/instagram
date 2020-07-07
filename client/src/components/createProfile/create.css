@@ -4,6 +4,10 @@
     align-items: center;
     flex-direction: column;   
 }
+.profile-image{
+    height: 200px;
+    border-radius:100px;
+}
 .create-profile h1{
     margin-top: 50px;
     font-size: 25px;
