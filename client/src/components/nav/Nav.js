@@ -47,7 +47,7 @@ const NavBar = ({ auth: {isAuth, loading}, logout, getCurrentProfile, profile}) 
                         <h1>{data.user.username}</h1>
                         <li><a href="/profile"><h3><FaUser />  Profile</h3></a></li>
                         <li><a href="/feed"><h3><FaHome />   Feed</h3></a></li>
-                        <li><a href="/search"><h3><FaSearch />   Search</h3></a></li>
+        
                         <li><a href="/" onClick={logout}><h3><FaPaperPlane />   Log off</h3></a></li>
                     </ul>
                 </nav>
