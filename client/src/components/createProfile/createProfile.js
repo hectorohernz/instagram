@@ -96,7 +96,6 @@ const CreateProfile = () => {
         />
         <div>
           <input type="submit" value="Submit" />
-          <input type="submit" value="Maybe Later"/>
         </div>
       </form>
     </section>

@@ -15,8 +15,8 @@ export default function Home() {
             </div>
             <div className="whitebox">
                 <div className="whitebox-btn" >
-                    <a href="/login" className="btn">LOGIN</a>
-                    <a href="/signup" className="btn sign-up-btn">SIGN UP</a>
+                    <a href="/login" className="whitebox-btn">LOGIN</a>
+                    <a href="/signup" className="whitebox__signup">SIGN UP</a>
                 </div>
             </div>
         </div>
