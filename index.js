@@ -20,15 +20,13 @@ app.use("/api/posts", require("./routes/api/post")); // Defining Post route
 if (process.env.NODE_ENV === "production") {
    app.use(express.static("build"));
    app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname,  "build", "index.html"));
+        res.sendFile(path.resolve("client/build", "index.html"));
     });
-
+    
   } else{
   console.log(" Server Is In Dev")
-  //  app.use(express.static(path.join(__dirname, 'client/build')));
-    
     app.get("*", (req, res) => {
-      const index = path.resolve(__dirname, "client/build", "index.html");
+      const index = path.join("client/build", "index.html");
       res.sendFile(index);
     });
 }
