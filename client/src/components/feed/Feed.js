@@ -10,19 +10,19 @@ import axios from "axios";
 
 
 const Feed = ({ auth: { isAuth, loading } }) => {
-  const [mockData, setData] = useState(data);
+  const [mockData, setData] = useState(data); // State with Hooks s
   const [userData, setUserData] = useState(null);
 
   const fetchUser = async () => {
-    const res = await axios.get("/api/profile/me");
-    setUserData(res.data)
+    const res = await axios.get("/api/profile/me"); // Getting Data from from the api route. User Must Be Login with Api Token 
+    setUserData(res.data)  // Getting Data from from the api route. User Must Be Login with Api Token 
   };
-
-  useEffect(() => {
-    fetchUser();
+  // Similar to componentDidMount and componentDidUpdate
+  useEffect(() => { // Use Effect is ran after the componets have load. 
+    fetchUser(); // The Effect Hook lets you perform side effects in function components:
   }, [])
 
-
+// Conditional Rendering If the userdata has not loaded it will just load the loading spinner 
   return userData === null ? <Spinner/> : (
     <>
       <NavBar />
@@ -42,7 +42,11 @@ const Feed = ({ auth: { isAuth, loading } }) => {
             <div className="photo-container">
               <img src={user.profileimage} className="photo" />
             </div>
-        
+            <div className="icons">
+            <i class="fas fa-heart"></i>
+            <i class="fas fa-comment"></i>
+            <i class="fas fa-sliders-h"></i>
+            </div>
           </div>
         ))}
       </div>

@@ -23,7 +23,7 @@ const ProfileSchema = new mongoose.Schema({
         type: String
     },
     hobbies: {
-        type: [String]
+        type: [String] 
     },
     food: {
         type: String

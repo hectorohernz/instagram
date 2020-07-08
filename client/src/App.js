@@ -59,12 +59,7 @@ export default class BasicExample extends Component {
                 <Route path="/search">
                   <SearchPage />
               </Route>
-                <Route path="/test">
-                  <Test />
-                </Route>
-                <Route path="/test2">
-                  <LoginTest />
-                </Route>
+              
                 <Route path="/login">
                   <Login />
                 </Route>
@@ -77,9 +72,7 @@ export default class BasicExample extends Component {
                 <Route path="/successful">
                   <Successful />
                 </Route>
-                <Route path="/vt">
-                  <Spinner/>
-                </Route>
+                
               </Switch>
           </Router>
         </Provider>

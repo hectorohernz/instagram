@@ -2,7 +2,7 @@ const express = require("express"); // Express to a quickier way of  creating a 
 const app = express();
 const connectDB = require("./config/db"); // Requiring Connection to mongodb and mongoose connection
 const path = require("path");
-const cors = require("cors");
+
 // Connect Database
 connectDB();
 // using json data
@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === "production") {
     });
     console.log(path.resolve(__dirname,  "client/build", "index.html"))
   } else{
-  console.log(" Server Is In Dev")    
+  console.log(" Server Is In Dev Mode")    
     app.get("*", (req, res) => {
       const index = path.resolve(__dirname, "client/build", "index.html");
       res.sendFile(index);

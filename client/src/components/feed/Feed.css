@@ -56,3 +56,17 @@
     border-radius: 10px;
     margin: 20px 0px;
  }
+ 
+.icons{
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   height: 50px;
+   width: 250px;
+   font-size: 25px;
+}
+.icons i{
+   border: 1px solid black;
+   padding: 5px 15px;
+   border-radius: 5px;
+}

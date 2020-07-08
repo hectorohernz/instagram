@@ -21,16 +21,17 @@ class Login extends Component {
     }
 
     async submitHandler(e){
+        // Use a out-sourced function from actions to make an api call with axios
         e.preventDefault();
         const {username,password} = this.state; 
-        this.props.login(username,password);
+        this.props.login(username,password); 
     };
    
 
     render() {
         const { password, username} = this.state;
         // Redirect if logged in 
-        if(this.props.isAuth){
+        if(this.props.isAuth){ 
             return <Redirect to="/feed"/>
         }
 
