@@ -5,12 +5,13 @@
   "main": "index.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"node --ignore 'client/*'\" \"npm run client\"",
+    "start:prod": "nodemon server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "install": "cd client && npm install && npm install",
     "build": "cd client && npm run build",
-    "test": "cd routes && npm run test"
+    "test": "cd routes && npm run test",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
@@ -36,6 +37,7 @@
     "moment": "^2.27.0",
     "mongoose": "^5.9.20",
     "multer": "^1.4.2",
+    "nodemon": "^2.0.4",
     "validator": "^13.1.1"
   },
   "homepage": "https://github.com/hectorohernz/instagram#readme",
