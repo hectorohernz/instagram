@@ -23,7 +23,7 @@ const Feed = ({ auth: { isAuth, loading } }) => {
   }, [])
 
 
-  return userData === null ? "" : (
+  return userData === null ? <Spinner/> : (
     <>
       <NavBar />
       <h1 className="welcome-text">Welcome Back, {userData.user.username}</h1>

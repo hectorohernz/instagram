@@ -1,0 +1,27 @@
+.Profile-Custom-Login{
+    height: 90vh;
+    display: flex;
+
+    align-items: center;
+    color: black;
+    flex-direction: column;
+}
+.Profile-Custom-Login h1{
+    font-size: 50px;
+    font-weight:300 ;
+}
+.Profile-Custom-Login a{
+   padding: 15px;
+    font-size: 25px;
+    background: black;
+    color: white;
+    text-align: none;
+    border-radius: 25px;
+    text-decoration: none;
+    
+}
+.image-success{
+    height: 250px;
+    border-radius: 20px;
+    margin: 50px 0px;
+}

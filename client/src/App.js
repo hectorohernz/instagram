@@ -8,15 +8,15 @@ import {
 import {Provider } from 'react-redux';
 import store from './store';
 import  { loadUser } from './actions/auth';
-
+import Spinner from './spinner';
 import Test from './components/Test/Form';
 import HomePage from './components/home/Home';
-import MainPage from './components/main/Main';
+
 import ProfilePage from './components/profile/Profile';
 import FeedPage from './components/feed/Feed';
 import SearchPage from './components/search/Search';
 import './App.css';
-import NavBar from './components/nav/Nav';
+
 import Footer from './components/footer/Footer'
 import LoginTest from './components/Test/LoginForm';
 import Login from './components/login/login';
@@ -50,9 +50,6 @@ export default class BasicExample extends Component {
               <Route exact path="/">
                   <HomePage />
                 </Route>
-                <Route path="/main">
-                  <MainPage />
-                </Route>
                 <Route path="/profile">
                   <ProfilePage />
                 </Route>
@@ -79,6 +76,9 @@ export default class BasicExample extends Component {
                 </Route>
                 <Route path="/successful">
                   <Successful />
+                </Route>
+                <Route path="/vt">
+                  <Spinner/>
                 </Route>
               </Switch>
           </Router>

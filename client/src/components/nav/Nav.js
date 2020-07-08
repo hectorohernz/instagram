@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaHome } from 'react-icons/fa';
 import { FaUser } from 'react-icons/fa';
-import { FaSearch } from 'react-icons/fa';
 import { FaPaperPlane } from 'react-icons/fa';
 import './Nav.css'
 import {connect } from 'react-redux';
@@ -11,7 +10,7 @@ import { getCurrentProfile } from "../../actions/Profile";
 import Spinner from '../../spinner';
 import {images} from '../../mock/PFile.json';
 import axios from "axios";
-import {Redirect} from 'react-router-dom';
+
 
 const NavBar = ({ auth: {isAuth, loading}, logout, getCurrentProfile, profile}) => {
   
@@ -27,7 +26,7 @@ const NavBar = ({ auth: {isAuth, loading}, logout, getCurrentProfile, profile}) 
        fetchUser();
       },[]);
 
-    return data === null ? < Spinner/> : (
+    return data === null ? '' : (
         <div className="container">
             <header>
                 <nav className={`navbar ${clicked ? "change" : ""}`}>

@@ -1,12 +1,11 @@
 import React, { useState } from "react";
-import { link, withRouter, Redirect } from 'react-router-dom';
+import {  withRouter, Redirect } from 'react-router-dom';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import "./create.css";
 import { images } from '../../mock/PFile.json';
 import axios from 'axios';
 import { createProfile } from '../../actions/Profile'
-import { setAlert } from '../../actions/alert';
 const CreateProfile = () => {
   const [formData, setFormData] = useState({
     bio: "",
@@ -44,7 +43,7 @@ const CreateProfile = () => {
       <h1> Create Your Profile</h1>
       <form onSubmit={(e => onSubmit(e))}>
         <div className="image">
-          <img src={images[profileImage].path} className="profile-image" />
+          <img src={images[profileImage].path} className="profile-image" alt={`images-${profileImage}`} />
         </div>
         <select id="profileImage" name="profileImage" value={profileImage} onChange={(e) => onChange(e)}>
           <option value="0">Choose Profile Image</option>
