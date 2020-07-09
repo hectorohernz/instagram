@@ -5,6 +5,7 @@ const path = require("path");
 
 // Connect Database
 connectDB();
+
 // using json data
 app.use(express.json({ extented: false, limit: "50mb" }));
 

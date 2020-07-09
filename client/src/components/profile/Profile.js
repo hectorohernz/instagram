@@ -4,6 +4,8 @@ import NavBar from '../nav/Nav';
 import db from "../../mock/db.json";
 import {images} from '../../mock/PFile.json';
 import './Profile.css';
+import Spinner from '../../spinner';
+
 export default function Profile() {
   const [data, setData] = useState(null);
   const fetchUser = async () => {
@@ -15,7 +17,7 @@ export default function Profile() {
     fetchUser();
   }, []);
   const classColors = ['blue', 'red', 'purple'];
-  return data === null ? "" : (
+  return data === null ? <Spinner/> : (
     <>
       <NavBar />
       <div className={`profile ${classColors[Math.floor(Math.random() * Math.floor(classColors.length))]}`}>
