@@ -7,6 +7,8 @@ import data from "../../mock/db.json";
 import NavBar from '../nav/Nav';
 import Spinner from '../../spinner';
 import axios from "axios";
+import AOS from 'aos'; 
+import 'aos/dist/aos.css';
 
 
 const Feed = ({ auth: { isAuth, loading } }) => {
@@ -20,6 +22,10 @@ const Feed = ({ auth: { isAuth, loading } }) => {
   // Similar to componentDidMount and componentDidUpdate
   useEffect(() => { // Use Effect is ran after the componets have load. 
     fetchUser(); // The Effect Hook lets you perform side effects in function components:
+    AOS.init({
+      duration : 1000
+    });
+    AOS.refresh();
   }, [])
 
 // Conditional Rendering If the userdata has not loaded it will just load the loading spinner 
@@ -29,7 +35,7 @@ const Feed = ({ auth: { isAuth, loading } }) => {
       <h1 className="welcome-text">Welcome Back, {userData.user.username}</h1>
       <div className="feed">
         {mockData.users.map(user => (
-          <div className="user-card">
+          <div className="user-card"  data-aos="zoom-in">
             <div className="user-card-info">
               <div className="user-info-1">
                 <img src={user.profileimage} className="user-image" />

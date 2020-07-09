@@ -6,6 +6,8 @@ import { register } from '../../actions/auth'
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Alert from '../Test/layout/Alert';
+import AOS from 'aos'; 
+import 'aos/dist/aos.css';
 
 class SignUp extends React.Component{
     constructor(props){
@@ -25,6 +27,11 @@ class SignUp extends React.Component{
     changeHandler(e){
         this.setState({   [e.target.name]: e.target.value    });
     }
+    componentDidMount(){
+        AOS.init({
+          duration : 1000
+        })
+      }
 
     async submitHandler(e){
         e.preventDefault();
@@ -51,7 +58,7 @@ class SignUp extends React.Component{
                 <h2>Sign Up</h2>
                 <a href="/"><i class="fas fa-chevron-left"></i></a>
                 <Alert/>
-                <form  className="whitebox" onSubmit={this.submitHandler}>
+                <form  className="whitebox" data-aos="fade-up" onSubmit={this.submitHandler}>
                     <input type="text"   id='name' name="name"   value={name} placeholder=" Name" className="input-fields" onChange={this.changeHandler}/>
                     <input type="tel"  id="phone"  name="phone" value={phone}  placeholder=" Phone Number" className="input-fields" onChange={this.changeHandler}/>
                     <input type="email" id='email' name="email" value={email} placeholder=" Email" className="input-fields" onChange={this.changeHandler}/>

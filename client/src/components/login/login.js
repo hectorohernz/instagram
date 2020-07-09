@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 import { login } from '../../actions/auth';
 import { Redirect } from 'react-router-dom';
 import Alert from '../Test/layout/Alert';
+import AOS from 'aos'; 
+import 'aos/dist/aos.css';
 
 class Login extends Component {
     constructor(props){
@@ -19,6 +21,11 @@ class Login extends Component {
     changeHandler(e){
         this.setState({   [e.target.name]: e.target.value    });
     }
+    componentDidMount(){
+        AOS.init({
+          duration : 1000
+        })
+      }
 
     async submitHandler(e){
         // Use a out-sourced function from actions to make an api call with axios
@@ -45,9 +52,9 @@ class Login extends Component {
                 <a href="/"><i class="fas fa-chevron-left"></i></a>
                 <Alert/>
                 <form  className="whitebox" onSubmit={this.submitHandler}>
-                    <input type="text" value={username}   name="username" placeholder=" Username" className="input-fields" onChange={this.changeHandler}/>
-                    <input type="password" value={password} name="password" placeholder=" Password" className="input-fields" onChange={this.changeHandler}/>
-                    <input type="submit"  />
+                    <input type="text" data-aos="fade-up" value={username}   name="username" placeholder=" Username" className="input-fields" onChange={this.changeHandler}/>
+                    <input type="password" data-aos="fade-up" value={password} name="password" placeholder=" Password" className="input-fields" onChange={this.changeHandler}/>
+                    <input type="submit" data-aos="fade-up"  />
                 </form>
             </div>
             

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import {  withRouter, Redirect } from 'react-router-dom';
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -6,6 +6,9 @@ import "./create.css";
 import { images } from '../../mock/PFile.json';
 import axios from 'axios';
 import { createProfile } from '../../actions/Profile'
+import AOS from 'aos'; 
+import 'aos/dist/aos.css';
+
 const CreateProfile = () => {
   const [formData, setFormData] = useState({
     bio: "",
@@ -17,7 +20,13 @@ const CreateProfile = () => {
     profileImage: 0
   });
   const [formCompleted, updateFormCompleted] = useState(false);
-
+  useEffect(() => {
+    AOS.init({
+      duration : 1000
+    });
+    AOS.refresh();
+  },[]);
+  
   const { bio, profileImage, location, hobbies, music, food, martial } = formData;
   const onChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value })
   const onSubmit = async e => {
@@ -38,10 +47,11 @@ const CreateProfile = () => {
     return <Redirect to="/successful"/>
 }
 
+
   return (
     <section className="create-profile">
       <h1> Create Your Profile</h1>
-      <form onSubmit={(e => onSubmit(e))}>
+      <form onSubmit={(e => onSubmit(e))} data-aos="fade-up">
         <div className="image">
           <img src={images[profileImage].path} className="profile-image" alt={`images-${profileImage}`} />
         </div>
