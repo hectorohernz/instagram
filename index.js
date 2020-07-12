@@ -21,10 +21,10 @@ app.use("/api/posts", require("./routes/api/post")); // Defining Post route
 // Server static assets in production
   app.use(express.static("client/build"));
   app.get("*", (req, res) => {
-       res.sendFile(path.join(__dirname, 'client/build/index.html'));
+       res.sendFile(path.join(__dirname, './client/build/index.html'));
   });
 
-  
+
 // Int Server
 app.listen(process.env.PORT || 5000, function() {
   console.log(`Server is Listening`)
