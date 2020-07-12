@@ -26,6 +26,6 @@ app.use("/api/posts", require("./routes/api/post")); // Defining Post route
   });
 
 // Int Server
-app.listen(process.env.PORT || 3000, () => {
-  console.log(`PORT Is Listening on localhost:${PORT}`);
-});
+app.listen(process.env.PORT || 5000, function() {
+  console.log(`Server is Listening`)
+})
