@@ -4,14 +4,8 @@
   "description": "A Instagram",
   "main": "index.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "nodemon index.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "install": "cd client && npm install && npm install",
-    "build": "cd client && npm run build",
-    "test": "cd routes && npm run test",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "start":"nodemon index.js",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false cd client && npm install npm && run build"
   },
   "repository": {
     "type": "git",

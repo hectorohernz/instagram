@@ -2,10 +2,11 @@ const express = require("express"); // Express to a quickier way of  creating a 
 const app = express();
 const connectDB = require("./config/db"); // Requiring Connection to mongodb and mongoose connection
 const path = require("path");
+const cors = require('cors');
 
 // Connect Database
 connectDB();
-
+app.use(cors());
 // using json data
 app.use(express.json({ extented: false, limit: "50mb" }));
 
@@ -18,20 +19,13 @@ app.use("/api/profile", require('./routes/api/profiles')); // Defining profiles 
 app.use("/api/posts", require("./routes/api/post")); // Defining Post route
 
 // Server static assets in production
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static(path.join(__dirname, 'client/build')));
-   app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname,  "/client/build", "index.html"));
-    });
-    console.log(path.resolve(__dirname,  "client/build", "index.html"))
-  } else{
-  console.log(" Server Is In Dev Mode")    
-    app.get("*", (req, res) => {
-      const index = path.resolve(__dirname, "client/build", "index.html");
-      res.sendFile(index);
-    });
-}
+  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.get("*", (req, res) => {
+       res.sendFile(path.resolve(__dirname,  "client/build", "index.html"));
+  });
 
+
+  
 const PORT = process.env.PORT || 5000; // Server location is localhost:5000 or If process.env.PORT
 
 // Int Server
