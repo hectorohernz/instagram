@@ -20,9 +20,9 @@ app.use("/api/auth", require("./routes/api/auth")); // Defining Auth route
 app.use("/api/profile", require('./routes/api/profiles')); // Defining profiles route
 // app.use("/api/posts", require("./routes/api/post")); // Defining Post route
 app.use('/', require("./routes/api/rootApi"));
+// adding small change
 
 // Server static assets in production
-
   app.use(express.static('client/build'));
   app.get("*", (req, res) => {	 
     res.sendFile(path.resolve(__dirname,  "./client/build", "index.html"));
