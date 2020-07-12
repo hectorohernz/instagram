@@ -18,15 +18,15 @@ app.use(express.json({ extented: false, limit: "50mb" }));
 app.use("/api/users", require("./routes/api/users")); // Defining User route
 app.use("/api/auth", require("./routes/api/auth")); // Defining Auth route
 app.use("/api/profile", require('./routes/api/profiles')); // Defining profiles route
-app.use("/api/posts", require("./routes/api/post")); // Defining Post route
+// app.use("/api/posts", require("./routes/api/post")); // Defining Post route
 app.use('/', require("./routes/api/rootApi"));
 
 // Server static assets in production
 
-  app.use(express.static('client/build'));
-  
+app.use(express.static('client/build'));
+
 
 // Int Server
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`Server is Listening ${PORT}!`)
 })
