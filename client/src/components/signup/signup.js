@@ -54,7 +54,7 @@ class SignUp extends React.Component{
             <div className="main__logo">
                 <img src="/images/logo.png" alt="" />
             </div>
-            <div className="whitebox-expanded">
+            <div className="whitebox-login-expanded">
                 <h2>Sign Up</h2>
                 <a href="/"><i class="fas fa-chevron-left"></i></a>
                 <Alert/>

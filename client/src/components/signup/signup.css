@@ -50,7 +50,7 @@
   grid-column: 1/ span 10;
 }
 
-.whitebox-expanded [type="submit"]{
+.whitebox-login-expanded [type="submit"]{
   height: 35px;
   width: 200px;
   margin: 15px 0px;
@@ -64,10 +64,14 @@
   cursor: pointer;
  text-decoration: none;
 }
-.whitebox-expanded i{
+.whitebox-login-expanded i{
   font-size: 50px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 15px;
 }
-.whitebox-expanded [type="text"]{
+.whitebox-login-expanded [type="text"]{
   height:35px;
   width: 300px;
   margin: 15px 0px;
@@ -81,7 +85,7 @@
   cursor: pointer;
  text-decoration: none;
 }
-.whitebox-expanded [type="password"]{
+.whitebox-login-expanded [type="password"]{
   height:35px;
   width: 300px;
   margin: 15px 0px;
@@ -99,7 +103,7 @@
   color: white;
 }
 
-.whitebox-expanded{
+.whitebox-login-expanded{
   height: 100%;
   width: 100%;
   background-color: white;
@@ -123,21 +127,17 @@
       height: 150px;
       width: 400px;
   }
-  .whitebox-expanded button{
+  .whitebox-login-expanded button{
       opacity: 0.6;
       transition: 0.3s;
   }
-  .whitebox-expanded{
-      grid-row: 4/ span 4;
+  .whitebox-login-expanded{
+      grid-row: 4/ span 6;
       grid-column: 3/ span 6;
       border-radius:20px ;
   }
-  .whitebox-expanded{
-      grid-row: 4/ span 4;
-      grid-column: 3/ span 6;
-      border-radius:20px ;
-  }
-  .whitebox-expanded i{
+ 
+  .whitebox-login-expanded i{
     font-size: 100px;
     margin: 15px;
   }
